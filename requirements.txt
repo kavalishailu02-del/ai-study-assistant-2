@@ -1,13 +1,9 @@
 streamlit
-google-genai
+google-generativeai
+PyPDF2
 python-dotenv
-fastapi
-uvicorn
-python-multipart
-python-docx
-PyMuPDF
 pandas
+python-docx
 openpyxl
 Pillow
-numpy
-requests
+
