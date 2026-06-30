@@ -1,0 +1,18 @@
+stages:
+  - quality
+
+quality-checks:
+  stage: quality
+  image: python:3.13
+
+  before_script:
+    - python -m pip install --upgrade pip
+    - pip install -r requirements.txt
+    - pip install pre-commit
+
+  script:
+    - pre-commit run --all-files
+
+  only:
+    - main
+    - master

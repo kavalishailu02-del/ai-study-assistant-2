@@ -32,13 +32,10 @@ languages = {
     "한국어 (Korean)": "Korean",
     "Русский (Russian)": "Russian",
     "Português (Portuguese)": "Portuguese",
-    "Italiano (Italian)": "Italian"
+    "Italiano (Italian)": "Italian",
 }
 
-selected_language = st.selectbox(
-    "🌍 Select Answer Language",
-    list(languages.keys())
-)
+selected_language = st.selectbox("🌍 Select Answer Language", list(languages.keys()))
 
 # Upload PDF
 uploaded_file = st.file_uploader("Upload a PDF", type=["pdf"])

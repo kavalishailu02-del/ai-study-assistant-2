@@ -1,0 +1,36 @@
+repos:
+  - repo: https://github.com/psf/black
+    rev: 24.4.2
+    hooks:
+      - id: black
+
+  - repo: https://github.com/astral-sh/ruff-pre-commit
+    rev: v0.5.0
+    hooks:
+      - id: ruff
+
+  - repo: local
+    hooks:
+      - id: mypy
+        name: mypy
+        entry: mypy .
+        language: system
+        pass_filenames: false
+
+      - id: pytest
+        name: pytest
+        entry: pytest
+        language: system
+        pass_filenames: false
+
+      - id: vulture
+        name: vulture
+        entry: vulture backend streamlit_app.py --min-confidence 80
+        language: system
+        pass_filenames: false
+
+      - id: bandit
+        name: bandit
+        entry: bandit -r backend -x venv,__pycache__
+        language: system
+        pass_filenames: false

@@ -21,20 +21,14 @@ async def upload_pdf(file: UploadFile = File(...)):
 
 @app.post("/summarize/")
 def summarize(text: str = Form(...)):
-    return {
-        "summary": summarize_text(text)
-    }
+    return {"summary": summarize_text(text)}
 
 
 @app.post("/quiz/")
 def quiz(text: str = Form(...), num_questions: int = 5):
-    return {
-        "quiz": generate_quiz(text, num_questions)
-    }
+    return {"quiz": generate_quiz(text, num_questions)}
 
 
 @app.post("/translate/")
 def translate(text: str = Form(...), language: str = "english"):
-    return {
-        "translation": translate_text(text, language)
-    }
+    return {"translation": translate_text(text, language)}

@@ -4,6 +4,7 @@ import os
 
 load_dotenv()
 
+
 def summarize_text(text: str):
     client = genai.Client(api_key=os.getenv("GOOGLE_API_KEY"))
 
@@ -23,9 +24,6 @@ Study Material:
 {text}
 """
 
-    response = client.models.generate_content(
-        model="gemini-2.5-flash",
-        contents=prompt
-    )
+    response = client.models.generate_content(model="gemini-2.5-flash", contents=prompt)
 
     return response.text
